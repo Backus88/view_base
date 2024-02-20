@@ -1,0 +1,27 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@stencil/core": "^4.0.0",
+    "@stencil/sass": "^3.0.5",
+    "@sydle/eslint-config-sydle-ui": "^1.0.0",
+    "@sydle/stylelint-config-sydle-ui": "^1.0.0",
+    "@sydle/sydle-ui": "^1.0.0",
+    "@sydle/ui-api": "^1.0.0",
+    "@sydle/ui-external-libs": "^1.0.0",
+    "@sydle/ui-nx-plugin": "^1.2.1",
+    "@sydle/ui-utils": "^1.0.0",
+    "@types/node": "^20.6.3",
+    "eslint": "~8.49.0",
+    "lerna": "^7.4.2",
+    "nx": "^16.10.0",
+    "prettier": "^3.0.3",
+    "rimraf": "^5.0.1",
+    "rollup-plugin-node-polyfills": "^0.2.1",
+    "stylelint": "^15.10.3"
+  },
+  "dependencies": {}
+}

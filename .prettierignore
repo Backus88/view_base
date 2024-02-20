@@ -1,0 +1,15 @@
+node_modules/
+coverage/
+
+# Stencil
+www/
+loader/
+.stencil/
+dist/
+dist-storybook/
+
+# OS
+.DS_Store
+Thumbs.db
+UserInterfaceState.xcuserstate
+.env
