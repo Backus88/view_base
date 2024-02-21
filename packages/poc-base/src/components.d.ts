@@ -14,6 +14,7 @@ export namespace Components {
     interface SyLibClasse {
         "api": any;
         "body": any;
+        "id_classe": any;
         "identificador": string;
         "nome": any;
     }
@@ -24,6 +25,8 @@ export namespace Components {
         "data_atualizacao": any;
         "data_criacao": any;
         "esta_publicado": boolean;
+        "id_classe": any;
+        "id_objeto": any;
         "id_pai": any;
         "identificador": any;
         "nome": any;
@@ -105,6 +108,7 @@ declare namespace LocalJSX {
     interface SyLibClasse {
         "api"?: any;
         "body"?: any;
+        "id_classe"?: any;
         "identificador"?: string;
         "nome"?: any;
     }
@@ -115,6 +119,8 @@ declare namespace LocalJSX {
         "data_atualizacao"?: any;
         "data_criacao"?: any;
         "esta_publicado"?: boolean;
+        "id_classe"?: any;
+        "id_objeto"?: any;
         "id_pai"?: any;
         "identificador"?: any;
         "nome"?: any;

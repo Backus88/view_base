@@ -13,6 +13,7 @@ export class Conteudo {
 
   nome = "contentName";
   identificador = 'conteudo';
+  id_classe = '646e247ad961f4232baea9af';
 
   async componentWillLoad(){
     console.log('idpai', this.id_pai)
@@ -31,7 +32,9 @@ export class Conteudo {
         <sy-lib-classe api={this.api}
                        body={this.body}
                        nome={this.nome}
-                       identificador={this.identificador}/>
+                       identificador={this.identificador}
+                       id_classe={this.id_classe}
+                       />
       </Host>
     );
   }

@@ -10,11 +10,11 @@ export class Classe {
   @Prop () body: any;
   @Prop () identificador: string;
   @Prop () nome: any;
+  @Prop () id_classe: any;
   @State () objetos: any;
   @State () esta_publicado: boolean = false;
   @State () data_criacao: any;
   @State () data_atualizacao: any;
-  @State () id_filho: any;
 
   publicado(objeto: any){
     if (!objeto._source.publishedDate || objeto._source.publishedDate.length === 0) return false;
@@ -44,6 +44,8 @@ export class Classe {
                          nome={this.teste(item)}
                          identificador={this.identificador}
                          id_pai={item._id}
+                         id_classe={this.id_classe}
+                         id_objeto={item._id}
                          >
 
           </sy-lib-objeto>

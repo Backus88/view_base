@@ -12,6 +12,7 @@ export class Tema {
   
   nome = "tema";
   identificador: string = "tema";
+  id_classe = '645e2bbe73716b2345bb08e4';
 
   render() {
     return (
@@ -21,6 +22,7 @@ export class Tema {
             body={this.body} 
             nome={this.nome}
             identificador={this.identificador}
+            id_classe = {this.id_classe}
             />
       </Host>
     );

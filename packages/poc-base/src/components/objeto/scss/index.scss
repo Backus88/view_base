@@ -8,14 +8,27 @@
     height: 100vh;
     padding: 10%;
 }
+.container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+}
 .classes{
     display: flex;
     justify-content: flex-start;
     cursor: pointer;
-    padding: 1px;
+    padding: 0px;
     border: solid 1px black;
     border-radius: 5px;
 }
-Button{
-    // --sy-button-background-color: red;
+
+.exibe{
+    background-color: pink;
+    width: 20px;
+    height: 20px;
+}
+h1{
+    font-size: 20px;
+    margin: 10px;
 }

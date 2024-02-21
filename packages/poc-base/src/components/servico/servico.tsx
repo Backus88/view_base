@@ -11,7 +11,10 @@ export class Servico {
   @State () api: any = new CustomAPI('646e20ec5676b30e5c9249f8');
   @Prop  () id_pai: any;
 
+  identificador = 'serviço';
   nome = "contentName";
+  id_classe = '646e20ec5676b30e5c9249f8';
+
   async componentWillLoad(){
     console.log('idpai', this.id_pai)
     this.body = {
@@ -29,6 +32,8 @@ export class Servico {
         <sy-lib-classe api={this.api}
                        body={this.body}
                        nome={this.nome}
+                       identificador={this.identificador}
+                       id_classe={this.id_classe}
                        />
       </Host>
     );

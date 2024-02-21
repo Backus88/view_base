@@ -14,6 +14,7 @@ export class Base {
   render() {
     return (
       <Host>
+        <div class='container'></div>
         <sy-lib-tema/>
       </Host>
     );

@@ -13,6 +13,7 @@ export class Categoria {
 
   nome = "categoria";
   identificador :string = 'categoria';
+  id_classe = '645e2bb0110ddd2cd4054e8f';
 
   async componentWillLoad(){
     this.body = {
@@ -31,6 +32,7 @@ export class Categoria {
                        body={this.body}
                        nome={this.nome}
                        identificador={this.identificador}
+                       id_classe={this.id_classe}
                        />
       </Host>
     );
