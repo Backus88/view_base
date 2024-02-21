@@ -1,0 +1,21 @@
+@import '~@sydle/sydle-ui/styles/scss';
+@import 'classes';
+
+
+.root{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    padding: 10%;
+}
+.classes{
+    display: flex;
+    justify-content: flex-start;
+    cursor: pointer;
+    padding: 1px;
+    border: solid 1px black;
+    border-radius: 5px;
+}
+Button{
+    // --sy-button-background-color: red;
+}
