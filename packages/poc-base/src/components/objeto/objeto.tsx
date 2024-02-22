@@ -22,7 +22,8 @@ export class Objeto {
     if (this.identificador === 'tema') return <sy-lib-categoria id_pai={id_pai}/>
     if (this.identificador === 'categoria') return <div>
                                                         <sy-lib-conteudo id_pai={id_pai}/>
-                                                        <sy-lib-servico id_pai={id_pai} /></div>
+                                                        <sy-lib-servico id_pai={id_pai} />
+                                                   </div>
     return null;
   }
 
@@ -31,12 +32,16 @@ export class Objeto {
     return "Não Publicado";
   }
 
-  transformaData(data: any){
-    if (data) return `${data.slice(8,10)}/${data.slice(5,7)}/${data.slice(2,4)}`
+  transformaData(data: any, dataAtualizacao: boolean){
+    if(dataAtualizacao && data) return `${data.slice(8,10)}/${data.slice(5,7)}/${data.slice(2,4)}-${data.slice(11,16)} ` 
+    if(data) return `${data.slice(8,10)}/${data.slice(5,7)}/${data.slice(2,4)}` 
     return 'vazio';
   }
 
-  
+  toggleIcone(toggle:boolean){
+    if(toggle) return <ion-icon name="chevron-down-outline"></ion-icon>
+    return <ion-icon name="chevron-forward-outline"></ion-icon>
+  }
 
   async componentWillLoad(){
     // console.log("identificador:", this.identificador);
@@ -49,16 +54,22 @@ export class Objeto {
     return (
       <Host>
         <div class='container'>
-          <h1>{this.identificador}</h1>
-          <div class = 'subcontainer'>
-            <div class='classes' role='button'  onClick= {()=> window.open(`https://sefazce-dev.sydle.one/workspaces/view/${this.id_classe}/${this.id_objeto}`)}>
-              <h1>{this.nome}</h1>
-            </div>
-            <div class = 'exibe' role='button'  onClick= {()=> this.toggle = !this.toggle}></div>
+          <div class = 'exibe' role='button'  onClick= {()=> this.toggle = !this.toggle}>{this.toggleIcone(this.toggle)}</div>
+          <div class = 'classe'>
+            <h1>{this.identificador}</h1>
           </div>
-          <h1>{this.estaPublicado(this.esta_publicado)}</h1>
-          <h1>{this.transformaData(this.data_criacao)}</h1>
-          <h1>{this.transformaData(this.data_atualizacao)}</h1>
+          <div class='objeto' role='button'  onClick= {()=> window.open(`https://sefazce-dev.sydle.one/workspaces/view/${this.id_classe}/${this.id_objeto}`)}>
+            <h1>{this.nome}</h1>
+          </div>
+          <div class='status'>
+            <h1>{this.estaPublicado(this.esta_publicado)}</h1>
+          </div>
+          <div class= 'data_criacao'>
+            <h1>{this.transformaData(this.data_criacao, false)}</h1>
+          </div>
+          <div class='data_atualizacao'>
+            <h1>{this.transformaData(this.data_atualizacao, true)}</h1>
+          </div>
         </div>
           {this.toggle?
             this.identificaFilho(this.id_pai)

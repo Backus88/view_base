@@ -64,19 +64,23 @@ table {
     display: flex;
     flex-direction: row;
 }
-.classes{
+.objeto{
     display: flex;
     justify-content: flex-start;
     align-items: center;
     cursor: pointer;
     padding: 0px;
-    border: solid 1px black;
     border-radius: 5px;
+    width: 300px;
+}
+
+.objeto:hover{
+    background-color: lightgray;
 }
 
 .exibe{
     cursor: pointer;
-    background-color: pink;
+    background-color: white;
     width: 20px;
     height: 20px;
 }
@@ -84,4 +88,35 @@ h1{
     font-size: 15px;
     line-height: 0.5px;
     margin:10px;
+    width: 100%;
+}
+
+.classe{
+    display: flex;
+    align-items: center;
+    width: 120px;
+    height: 20px;
+}
+
+.titulo{
+    display: flex;
+    width: 220px;
+}
+
+.status{
+    display: flex;
+    width: 120px;
+}
+
+.data_criacao{
+    display: flex;
+    width: 150px;
+    justify-content: flex-start;
+}
+
+.data_atualizacao{
+    display: flex;
+    width: 150px;
+    justify-content:center;
+    padding: 0;
 }
