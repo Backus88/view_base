@@ -31,15 +31,18 @@ export class Objeto {
     return "Não Publicado";
   }
 
-  montaUrl(base: string, class_id, object_id){
-    return `${base}/workspaces/view/${this.id_classe}/${this.id_objeto}`
+  transformaData(data: any){
+    if (data) return `${data.slice(8,10)}/${data.slice(5,7)}/${data.slice(2,4)}`
+    return 'vazio';
   }
+
+  
 
   async componentWillLoad(){
     // console.log("identificador:", this.identificador);
     console.log('id class', this.id_classe );
     console.log('id objeto', this.id_objeto );
-
+    console.log(this.data_atualizacao.slice(2,4))
   }
 
   render() {
@@ -47,15 +50,15 @@ export class Objeto {
       <Host>
         <div class='container'>
           <h1>{this.identificador}</h1>
-          <div>
+          <div class = 'subcontainer'>
             <div class='classes' role='button'  onClick= {()=> window.open(`https://sefazce-dev.sydle.one/workspaces/view/${this.id_classe}/${this.id_objeto}`)}>
-              {this.nome}
+              <h1>{this.nome}</h1>
             </div>
             <div class = 'exibe' role='button'  onClick= {()=> this.toggle = !this.toggle}></div>
           </div>
           <h1>{this.estaPublicado(this.esta_publicado)}</h1>
-          <h1>{this.data_criacao}</h1>
-          <h1>{this.data_atualizacao}</h1>
+          <h1>{this.transformaData(this.data_criacao)}</h1>
+          <h1>{this.transformaData(this.data_atualizacao)}</h1>
         </div>
           {this.toggle?
             this.identificaFilho(this.id_pai)
